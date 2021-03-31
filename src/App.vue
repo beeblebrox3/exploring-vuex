@@ -2,40 +2,28 @@
   <div id="app">
     <h1>App boladão</h1>
 
-    <div>Menu boladão do app boladão</div>
+    <div>Esta página apenas está aqui para incluir outros componentes, então ignore-a :D</div>
 
-    <pre>
-      <code>
-        isAudioAndVideoAllowed: {{ isAudioAndVideoAllowed }}
-        isAudioAllowed: {{ isAudioAllowed }}
-        isVideoAllowed: {{ isVideoAllowed }}
-      </code>
-    </pre>
-
-    <Call v-if="isAudioAndVideoAllowed"/>
+    <A/>
+    <B/>
   </div>
 </template>
 
 <script>
 
-import { mapGetters } from 'vuex'
-import Call from "@/Call";
+
+import A from "@/components/A";
+import B from '@/components/B'
 
 export default {
   name: 'App',
   components: {
-    Call,
+    A,
+    B
   },
-  computed: {
-    ...mapGetters([
-        'isAudioAndVideoAllowed',
-        'isAudioAllowed',
-        'isVideoAllowed',
-    ])
-  },
+
   mounted() {
-    console.log('mounting app');
-    this.$store.dispatch('getUserMediaPermissions');
+    console.log('mounting app')
   }
 }
 </script>
